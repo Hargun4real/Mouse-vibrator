@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibrating Cursor</title>
+    <style>
+        body {
+            cursor: none; /* Hide default cursor */
+        }
+        .custom-cursor {
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor" id="cursor"></div><script>
+    const cursor = document.getElementById("cursor");
+    let offset = 0;
+    let direction = 1;
+
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + offset + "px";
+        cursor.style.top = e.clientY + "px";
+    });
+
+    setInterval(() => {
+        offset = direction * 3; // Adjust vibration intensity
+        direction *= -1;
+    }, 30); // Adjust speed
+</script>
+
+</body>
+</html>
