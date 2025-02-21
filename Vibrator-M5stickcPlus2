@@ -1,13 +1,14 @@
- Version: 1.0
+REM Author: Hargun 
+REM Description: Keep the mouse vibrating 
+REM Version: 1.0
 
-DELAY 1000 
-GUI SPACE 
-DELAY 1000 
-STRING bluetooth 
-ENTER 
-DELAY 2000
-STRING connect mouse 
-ENTER 
-DELAY 3000
+DELAY 1000
 
-REM Start moving the mouse continuously LOOP: MOUSEMOVE 5,5 DEL
+REM Start moving the mouse continuously 
+LOOP: 
+MOUSEMOVE 5,5 
+DELAY 100 
+MOUSEMOVE -5,-5 
+DELAY 100 
+GOTO LOOP
+
